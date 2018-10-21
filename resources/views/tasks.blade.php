@@ -42,7 +42,7 @@
             @if (count($tasks) > 0)
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        Current Tasks
+                        <!-- 目前任務 -->
                     </div>
 
                     <div class="panel-body">
@@ -54,10 +54,12 @@
                             <tbody>
                             @foreach ($tasks as $task)
                                 <tr>
-                                    <td class="table-text"><div>{{ $task->name }}</div></td>
-
-                                    <!-- Task Delete Button -->
+                                    <!-- 任務名稱 -->
+                                    <td class="table-text">
+                                        <div>{{ $task->name }}</div>
+                                    </td>
                                     <td>
+                                        <!-- 代辦：刪除按鈕 -->
                                         <form action="{{ url('task/'.$task->id) }}" method="POST">
                                             {{ csrf_field() }}
                                             {{ method_field('DELETE') }}
