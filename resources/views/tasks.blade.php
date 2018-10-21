@@ -58,16 +58,18 @@
                                     <td class="table-text">
                                         <div>{{ $task->name }}</div>
                                     </td>
+
                                     <td>
                                         <!-- 代辦：刪除按鈕 -->
-                                        <form action="{{ url('task/'.$task->id) }}" method="POST">
+                                        <!-- 刪除按鈕 -->
+                                        <form action="/task/{{ $task->id }}" method="POST">
                                             {{ csrf_field() }}
                                             {{ method_field('DELETE') }}
 
-                                            <button type="submit" class="btn btn-danger">
-                                                <i class="fa fa-btn fa-trash"></i>Delete
-                                            </button>
+                                            <button>刪除任務</button>
                                         </form>
+
+
                                     </td>
                                 </tr>
                             @endforeach
